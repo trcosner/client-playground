@@ -1,0 +1,47 @@
+.banner {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .product {
+  /* background-color: red; */
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  bottom: 170px;
+  left: 25%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: 0.7s;
+  --left: -70px;
+  display: flex;
+}
+
+.banner .product .soda {
+  background:
+    var(--url) var(--left),
+    url(../assets/metalCan.png);
+  background-size: auto 100%;
+  width: 500px;
+  aspect-ratio: 1/1;
+  background-blend-mode: multiply;
+  mask-image: url(../assets/metalCan.png);
+  mask-size: auto 100%;
+  transition: 0.7s;
+  position: absolute;
+  left: 50%;
+  tranform: translateX(50%);
+}
+
+.banner .product .soda:nth-child(2) {
+  opacity: 0;
+}
+
+.banner .product:hover .soda:nth-child(2) {
+  opacity: 1;
+}
+
+.banner .product:hover {
+  --left: -250px;
+}
